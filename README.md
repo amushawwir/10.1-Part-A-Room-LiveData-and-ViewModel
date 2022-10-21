@@ -9,3 +9,7 @@
 ![Screenshot_20221020_190122](https://user-images.githubusercontent.com/75873471/196943537-8710a1d6-f31d-4f41-a3b3-8808f3364017.png)
 
 ### Homework
+![homework1](https://user-images.githubusercontent.com/75873471/197161529-279c764a-8068-4334-a26b-c3912e1cf970.png)
+![homework2](https://user-images.githubusercontent.com/75873471/197161537-1f55d76d-8ecf-4ce1-a23a-e563170eb887.png)
+![homework3](https://user-images.githubusercontent.com/75873471/197161550-5bb30f82-701c-4505-bae4-9be93ec99097.png)
+![homework4](https://user-images.githubusercontent.com/75873471/197161564-cdfa68b5-ba73-448e-9494-101eed2ebf41.png)
