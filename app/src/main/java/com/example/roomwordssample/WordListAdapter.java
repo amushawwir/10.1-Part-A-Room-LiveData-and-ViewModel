@@ -13,7 +13,9 @@ import java.util.List;
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
     private final LayoutInflater mInflater;
-    private List<Word> mWords; // Cached copy of words
+//    private List<Word> mWords; // Cached copy of words
+    private List<Word> mWords;
+    private static ClickListener clickListener;
 
     WordListAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
@@ -33,6 +35,9 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             holder.wordItemView.setText("No Word");
         }
     }
+    public Word getWordAtPosition (int position) {
+        return mWords.get(position);
+    }
 
     void setWords(List<Word> words){
         mWords = words;
@@ -47,6 +52,13 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             return mWords.size();
         else return 0;
     }
+    public void setOnItemClickListener(ClickListener clickListener) {
+        WordListAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(View v, int position);
+    }
 
     class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
@@ -54,6 +66,12 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         private WordViewHolder(View itemView) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.textView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    clickListener.onItemClick(view, getAdapterPosition());
+                }
+            });
         }
     }
 }
